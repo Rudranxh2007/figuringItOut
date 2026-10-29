@@ -1,0 +1,14 @@
+{
+  "name": "pulsefit-workout-tracker",
+  "version": "1.0.0",
+  "description": "Daily workout note, routine scheduler and fitness progress tracker in MERN stack",
+  "scripts": {
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "seed": "node server/src/seed/seedExercises.js"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
