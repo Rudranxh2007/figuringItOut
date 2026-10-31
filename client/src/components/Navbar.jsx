@@ -11,7 +11,7 @@ import {
   User,
   Menu,
   X,
-  Flame
+  Flame,
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -28,19 +28,19 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: 'Dashboard', path: '/', icon: Flame },
-    { name: 'Daily Note & Log', path: '/daily', icon: Calendar },
-    { name: 'Routines', path: '/planner', icon: ListPlus },
-    { name: 'Progress & PRs', path: '/progress', icon: LineChart },
+    { name: 'Dashboard',        path: '/',          icon: Flame },
+    { name: 'Daily Log',        path: '/daily',     icon: Calendar },
+    { name: 'Routines',         path: '/planner',   icon: ListPlus },
+    { name: 'Progress & PRs',   path: '/progress',  icon: LineChart },
     { name: 'Exercise Library', path: '/exercises', icon: BookOpen },
   ];
 
   return (
     <nav className="bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo & Brand in Black/Yellow/White */}
-          <Link to="/" className="flex items-center gap-3 group">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
             <div className="p-2.5 bg-yellow-400 rounded-xl shadow-lg shadow-yellow-400/20 group-hover:scale-105 transition-transform">
               <Dumbbell className="w-5 h-5 text-black stroke-[2.5]" />
             </div>
@@ -49,7 +49,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav Items */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => {
               const Icon = link.icon;
@@ -71,7 +71,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Desktop User actions */}
+          {/* User info + Logout */}
           <div className="hidden md:flex items-center gap-3">
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-neutral-900 border border-neutral-800">
               <User className="w-4 h-4 text-yellow-400" />
@@ -89,7 +89,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile hamburger menu button */}
+          {/* Mobile hamburger */}
           <div className="flex md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
